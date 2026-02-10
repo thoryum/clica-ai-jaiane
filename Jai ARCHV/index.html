@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💜</title>
+
+  <style>
+    /* BODY COM BACKGROUND LOCAL */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url('heart.jpg'); /* imagem local */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      position: relative;
+    }
+
+    /* OVERLAY ROXO TRANSPARENTE */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(123, 44, 191, 0.3);
+      z-index: 0;
+    }
+
+    /* CONTEÚDO NA FRENTE */
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* CARTÃO CENTRAL */
+    .card {
+      background: #0b0114;
+      padding: 30px 25px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(60, 0, 90, 0.3);
+      max-width: 330px;
+      animation: pop 0.5s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #7b2cbf;
+    }
+
+    p {
+      font-size: 16px;
+      color: #3c096c;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 26px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background: #7b2cbf;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 5px 15px rgba(123, 44, 191, 0.4);
+    }
+
+    button:hover {
+      background: #5a189a;
+      transform: scale(1.07);
+    }
+
+    /* GIF DO GENGAR */
+    .gif-box {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gif-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="conteudo">
+    <h1>💜 Clique aqui 💜</h1>
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+  </div>
+
+  <script>
+    function mostrarMensagem() {
+      document.getElementById("conteudo").innerHTML = `
+        <div class="gif-box">
+          <img src="gengar.gif" alt="Gengar fofo">
+        </div>
+        <p>
+          Perdão por ter agido de forma imatura e como se eu não me importasse com você, quero que veja esse convite como um sinal de arrependimento e mudança,<strong>te quero na minha vida e no meu futuro sabia jaiane kovalski</strong>.<br><br>
+          Quer jogar <strong>Minecraft</strong> comigo hoje à noite,
+          igual na primeira vez que a gente jogou?<br><br>
+          Aquilo foi incrível pra mim 💜 ps; eu queria MUITO um abraço e um beijinho seu
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
